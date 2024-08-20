@@ -30,6 +30,7 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
      *
      * @param registry
      */
+    //？？为什么是protect
     protected void addInterceptors(InterceptorRegistry registry) {
         log.info("开始注册自定义拦截器...");
         registry.addInterceptor(jwtTokenAdminInterceptor)
@@ -41,6 +42,7 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
      * 通过knife4j生成接口文档
      * @return
      */
+    //使用knife4j的基础配置 固定的写法
     @Bean
     public Docket docket() {
         ApiInfo apiInfo = new ApiInfoBuilder()
@@ -61,6 +63,7 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
      * 设置静态资源映射
      * @param registry
      */
+    //设置静态资源映射 固定的写法
     protected void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/doc.html").addResourceLocations("classpath:/META-INF/resources/");
         registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
