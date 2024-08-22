@@ -13,4 +13,5 @@ public interface SetmealMapper {
      */
     @Select("select count(id) from sky_take_out.setmeal where category_id = #{id}")
     Integer countByCategoryId(Long id);
+
 }

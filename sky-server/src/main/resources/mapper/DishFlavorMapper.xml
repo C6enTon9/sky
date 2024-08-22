@@ -9,4 +9,11 @@
              (#{flavor.dishId},#{flavor.name},#{flavor.value})
         </foreach>
     </insert>
+    <delete id="deleteBatchByDishId">
+        delete from sky_take_out.dish_flavor
+        where
+        <foreach collection="ids" item="id" separator="or">
+        dish_id = #{id}
+        </foreach>
+    </delete>
 </mapper>
