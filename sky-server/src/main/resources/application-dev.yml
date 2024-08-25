@@ -11,3 +11,7 @@ sky:
     access-key-id: LTAI5tB39VtsCxCi4iZDfdyh
     bucket-name: sky-c6enton9
     access-key-secret: yoyBp2fyD5qFrpFEKArbbzGS9CGr0c
+  redis:
+    database: 0
+    host: 192.168.223.6
+    port: 6379
