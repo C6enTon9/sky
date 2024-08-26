@@ -31,8 +31,9 @@ public class ShopController {
     @GetMapping("/status")
     public Result<Integer> getStatus(){
 
-        Integer status = (Integer)redisTemplate.opsForValue().get("key");
+        Integer status = (Integer)redisTemplate.opsForValue().get(key);
 
+        System.out.println(key+":"+status);
         log.info("查询店铺营业状态为：{}",status);
 
         return Result.success(status);

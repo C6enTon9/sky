@@ -41,6 +41,10 @@
         select * from sky_take_out.dish
         where category_id = #{categoryId}
     </select>
+    <select id="listWithStatus" resultType="com.sky.entity.Dish">
+        select * from sky_take_out.dish
+        where category_id = #{categoryId} and status = #{status}
+    </select>
 
 
     <delete id="deleteBatchById">

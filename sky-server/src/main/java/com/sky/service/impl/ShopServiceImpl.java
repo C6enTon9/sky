@@ -21,7 +21,7 @@ public class ShopServiceImpl implements ShopService {
     @Override
     public void setStatus(Integer status) {
 
-        redisTemplate.opsForValue().set("key", status);
+        redisTemplate.opsForValue().set(key, status);
 
     }
 
@@ -32,7 +32,7 @@ public class ShopServiceImpl implements ShopService {
     @Override
     public Integer getStatus() {
 
-        Integer status = (Integer) redisTemplate.opsForValue().get("key");
+        Integer status = (Integer) redisTemplate.opsForValue().get(key);
 
         return status;
     }

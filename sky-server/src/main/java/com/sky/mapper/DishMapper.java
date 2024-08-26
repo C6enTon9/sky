@@ -62,4 +62,12 @@ public interface DishMapper {
      * @return
      */
     List<DishVO> list(Long categoryId);
+
+
+    /**
+     * C端根据分类id查询分类下全部菜品
+     * @param dish
+     * @return
+     */
+    List<Dish> listWithStatus(Dish dish);
 }
