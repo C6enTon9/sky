@@ -49,4 +49,36 @@ public class ShopCartController {
 
         return Result.success(list);
     }
+
+
+    /**
+     * 清空购物车
+     * @return
+     */
+    @ApiOperation("清空购物车")
+    @DeleteMapping("/clean")
+    public Result deleteAllShoppingCart(){
+
+        log.info("清空购物车...");
+
+        shopCartService.deleteAllShoppingCart();
+
+        return Result.success();
+    }
+
+
+    /**
+     * 减少购物车菜品数量
+     * @return
+     */
+    @PostMapping("/sub")
+    @ApiOperation("减少购物车菜品数量")
+    public Result subShoppingCart(ShoppingCartDTO shoppingCartDTO){
+
+        log.info("减少购物车菜品数量...");
+
+        shopCartService.subShoppingCart(shoppingCartDTO);
+
+        return Result.success();
+    }
 }
