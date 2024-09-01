@@ -9,4 +9,8 @@
         (#{openid},#{name},#{phone},#{sex},#{idNumber},#{avatar},#{createTime})
 
     </insert>
+    <select id="countUserNumber" resultType="java.lang.Integer">
+        select count(0) from user
+        where create_time between #{beginTime} and #{endTime}
+    </select>
 </mapper>
